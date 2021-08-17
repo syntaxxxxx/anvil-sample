@@ -7,8 +7,9 @@ import id.android.anvil.home.domain.HomeParams
 import id.android.anvil.home.domain.HomeUsecase
 import io.reactivex.rxjava3.core.SingleSource
 import io.reactivex.rxjava3.disposables.CompositeDisposable
+import javax.inject.Inject
 
-class HomeViewModel(private val usecase: HomeUsecase) : ViewModel(), HomeView {
+class HomeViewModel @Inject constructor(private val usecase: HomeUsecase) : ViewModel(), HomeView {
 
   private val disposables = CompositeDisposable()
   private val observer = MutableLiveData<HomeViewState>()
